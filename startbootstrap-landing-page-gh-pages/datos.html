@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Seea jon</title>
+  <title>Seea</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
     <div class="container">
       <div>
         <img src="img/icono.png" alt="Icono">
-        <a class="navbar-brand" href="#">Seea</a>
+        <a class="navbar-brand titulo" href="index.html" >Seea</a>
       </div>
         <div class=" col-lg-6 h-100 text-center text-lg-right my-auto ">
               <ul class="list-inline mb-2">
@@ -51,6 +51,13 @@
        </div>
   </nav>
 
+  
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="img/bg-masthead.jpg" alt="First slide">
+      </div>
+    </div>
+
   <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -60,10 +67,10 @@
             <th scope="col">Handle</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tabla">
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
+            <td></td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
@@ -119,7 +126,7 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="index.html">Home/a>
+              <a href="index.html">Home</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
@@ -134,7 +141,7 @@
               <a href="datos.html">Data</a>
             </li>
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; SEEA 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
@@ -171,36 +178,64 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<script>
+     <script>
 
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAGvrHuTgBysLQCY7rRoq5vQ9uBJV_2F1I",
-    authDomain: "seea-47a84.firebaseapp.com",
-    databaseURL: "https://seea-47a84.firebaseio.com",
-    projectId: "seea-47a84",
-    storageBucket: "seea-47a84.appspot.com",
-    messagingSenderId: "809597978970",
-    appId: "1:809597978970:web:0fe8f2ddb9193ceb6e4b63",
-    measurementId: "G-5CV4G62TMV"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-
-  var ref = firebase.database().ref();
-  ref.once("value").then(function(snapshot) {
-    var humedad = snapshot.child("datos/humedad").val();
-    console.log('Humeadad: ' + humedad);
-    var temperatura = snapshot.child("datos/temperatura").val();
-    console.log('Temperatura: ' + temperatura);
-  });
-
-  function llamarFirebase() {
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAGvrHuTgBysLQCY7rRoq5vQ9uBJV_2F1I",
+        authDomain: "seea-47a84.firebaseapp.com",
+        databaseURL: "https://seea-47a84.firebaseio.com",
+        projectId: "seea-47a84",
+        storageBucket: "seea-47a84.appspot.com",
+        messagingSenderId: "809597978970",
+        appId: "1:809597978970:web:0fe8f2ddb9193ceb6e4b63",
+        measurementId: "G-5CV4G62TMV"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     
-  }
+      var table = document.getElementById("tabla");
+      table.innerHTML = "";
+ 
 
-</script>
+      
+      var ref = firebase.database().ref();
+      ref.once("value").then(function(snapshot) {
+        var Objeto = snapshot.child("datos/Objeto").val();
+        console.log('Objeto: ' + Objeto);
+        var temperatura = snapshot.child("datos/temperatura").val();
+        console.log('Temperatura: ' + temperatura);
+        var ubicacion= snapshot.child("datos/ubicacion").val();
+        console.log('Ubicación: ' + ubicacion);
+    });
+
+    ref.orderByChild("tipo").on("child_added", function(snapshot){
+//repite el proceso como cuantas referencias encuentre y los asigna a la lista "d"
+     
+  var d = snapshot.val();        
+        
+  {
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  
+  // asigna a las celdas el valir del Child especificado
+  cell1.innerHTML = d.Objeto;
+  cell2.innerHTML = d.temperatura;
+  cell2.innerHTML = d.ubicacion;
+
+  }
+ 
+        
+});
+ 
+
+    
+      function llamarFirebase() {
+        
+      }
+    
+    </script>
 
 </body>
 

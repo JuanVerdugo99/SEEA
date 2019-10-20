@@ -10,6 +10,8 @@
 
   <title>Seea jon</title>
 
+
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,6 +27,8 @@
 
 <body>
 
+
+
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
@@ -35,19 +39,15 @@
         <div class=" col-lg-6 h-100 text-center text-lg-right my-auto ">
               <ul class="list-inline mb-2">
                 <li class="list-inline-item">
-                  <a href="#">About</a>
+                  <a href="index.html">Home</a>
                 </li>
                 <li class="list-inline-item">&sdot;</li>
                 <li class="list-inline-item">
-                  <a href="#">Contact</a>
+                  <a href="nosotros.html">About us</a>
                 </li>
                 <li class="list-inline-item">&sdot;</li>
                 <li class="list-inline-item">
-                  <a href="#">Terms of Use</a>
-                </li>
-                <li class="list-inline-item">&sdot;</li>
-                <li class="list-inline-item">
-                  <a href="#">Privacy Policy</a>
+                  <a href="datos.html">Data</a>
                 </li>
               </ul>
        </div>
@@ -64,12 +64,6 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
             </div>
           </form>
         </div>
@@ -84,25 +78,25 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <img class="iconos m-auto" src="img/muelle.png" alt="icono">
             </div>
-            <h3>Primera Fase</h3>
+            <h3>Phase One</h3>
             <p class="lead mb-0">Detección de materiales y desechos desde un punto fijo</p>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+        <div class="col-lg-4 align-self-center">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 ">
             <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
+                <img class="iconos m-auto" src="img/bahia.png" alt="icono">
             </div>
-            <h3>Segunda Fase</h3>
+            <h3>Phase Two</h3>
             <p class="lead mb-0">Detección de materiales y desechos en las bahias</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+                <img class="iconos m-auto" src="img/golfo.png" alt="icono">
             </div>
             <h3>Tercera Fase</h3>
             <p class="lead mb-0">Detección de materiales y desechos en golfos</p>
@@ -144,37 +138,52 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-            <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-            <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-            <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="contenedor seccion contenido-centrado">
+        <h2 class="fw-300 centrar-texto">Llene el formulario de contacto</h2>
 
-  <!-- Call to Action -->
+        <form class="contacto" action="">
+            <fieldset>
+                <legend>Información Personal</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu Nombre">
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" placeholder="Tu Correo Electronico" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" placeholder="Tu Teléfono" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje"></textarea>
+
+            </fieldset>
+            <fieldset>
+                <legend>Contacto</legend>
+
+                <p>Como desea ser Contactado:</p>
+
+                <div class="forma-contacto">
+                    <label for="telefono">Teléfono</label>
+                    <input type="radio" name="contacto" value="telefono" id="telefono">
+
+                    <label for="correo">E-mail</label>
+                    <input type="radio" name="contacto" value="correo" id="correo">
+                </div>
+                
+                <p>Si eligió Teléfono, elija la fecha y la hora</p>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha">
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" min="9:00" max="18:00">
+
+            </fieldset>
+
+            <input type="submit" value="Enviar" class="boton boton-verde">
+        </form>
+      </section>
+      
+      <!-- Call to Action -->
   <section class="call-to-action text-white text-center">
     <div class="overlay"></div>
     <div class="container">
@@ -243,11 +252,52 @@
         </div>
       </div>
     </div>
+
   </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAGvrHuTgBysLQCY7rRoq5vQ9uBJV_2F1I",
+    authDomain: "seea-47a84.firebaseapp.com",
+    databaseURL: "https://seea-47a84.firebaseio.com",
+    projectId: "seea-47a84",
+    storageBucket: "seea-47a84.appspot.com",
+    messagingSenderId: "809597978970",
+    appId: "1:809597978970:web:0fe8f2ddb9193ceb6e4b63",
+    measurementId: "G-5CV4G62TMV"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  var ref = firebase.database().ref();
+  ref.once("value").then(function(snapshot) {
+    var Objeto = snapshot.child("datos/Objeto").val();
+    console.log('Objeto: ' + Objeto);
+    var temperatura = snapshot.child("datos/temperatura").val();
+    console.log('Temperatura: ' + temperatura);
+    var ubicacion= snapshot.child("datos/ubicacion").val();
+    console.log('Ubicación: ' + ubicacion);
+  });
+
+  function llamarFirebase() {
+    
+  }
+
+</script>
 
 </body>
 
